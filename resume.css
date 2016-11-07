@@ -1,0 +1,124 @@
+body {
+    background-color: #ECF0F1;
+}
+
+h1 {
+	margin: 0px; 
+}
+
+
+p {
+	margin: 5px; 
+}
+
+
+
+
+#inner { padding: 10px 80px; 
+	width: 800px;
+	margin: 80px auto; 
+	background: #f5f5f5; 
+	border: solid #666; 
+	border-width: 2px 0 2px 0; }
+
+#hd {
+	margin: 30px;
+}
+
+
+#element1 {
+	margin-top: 30px;
+    margin-bottom: 30px;
+    height: 90px
+}
+
+#element2 {
+	margin-top: 30px;
+    margin-bottom: 30px;
+    height: 260px
+}
+
+#element3 {
+	margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+#element4 {
+	margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+
+div.leftDiv {
+	margin-top: 0px;
+	width:60px;
+	float:left;
+}
+
+#rightDiv {
+	margin-top: 0px;
+	margin-left: 124px;
+}
+
+#rightDiv2 {
+	margin-top: 20px;
+	margin-left: 120px;
+	text-align:left;
+}
+
+
+h2.elementTitle {
+	font-size: 130%;
+	margin: 0px; 
+	font-style: italic;
+}
+
+h1.cellTitle {
+	margin: 0px; 
+	font-size: 110%;
+	text-align:left;
+}
+
+#expTitle {
+	height:30px;
+}
+
+
+div.cellTitleDiv {
+	float:left;
+}
+
+div.date {
+	float:right;
+	font-style: italic;
+}
+
+p.cellTitleP {
+	font-size: 110%;
+}
+
+p.cellContent {
+	margin: 0px; 
+	text-align:left;
+}
+
+
+#skillCell1 {
+	width: 33%;
+	float:left;
+}
+
+#skillCell2 {
+	width: 33%;
+	float:left;
+}
+
+#skillCell3 {
+	width: 33%;
+	float:left;
+}
+
+div.expCell {
+	margin-top:20px;
+	margin-bottom:20px;
+}
