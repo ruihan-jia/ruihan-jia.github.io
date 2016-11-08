@@ -11,10 +11,27 @@
 <div>
 	<div id = "inner"; align = "center">
 		<div id = "hd">
-			<h1>Rick Jia</h1>
-			<p>Recent Graduate from ECE program, University of Toronto</p>
-			<p>Email: rick.jia@mail.utoronto.ca</p>
+			<div id = "hdLeft">
+				<h1>Rick Jia</h1>
+				<p>Recent Graduate from ECE program, University of Toronto</p>
+				<a href="mailto:rick.jia@mail.utoronto.ca">rick.jia@mail.utoronto.ca</a>
 
+			</div>
+
+			<div id = "hdRight">
+				<div class = "hdLinks">
+					<a href="http://ruihan-jia.github.io/Resume_Rick_Jia.pdf">Resume</a>
+				</div>
+
+				<div class = "hdLinks">
+					<a href="https://github.com/ruihan-jia">Github</a>
+				</div>
+
+				<div class = "hdLinks">
+					<a href="https://ca.linkedin.com/in/rick-jia-1944ba41">LinkedIn</a>
+				</div>
+
+			</div>
 		</div>
 		<hr>
 
@@ -103,7 +120,9 @@
 						</div>
 						<p>Work in progress app. Used for browsing reddit.com</p>
 						<p>Working with JSON and listview, utilizes Reddit API to display information</p>
-						<p>https://github.com/ruihan-jia/redditL</p>
+						<a href="https://github.com/ruihan-jia/redditL">Github Repository</a>
+						<button type="button" onclick="alterImageDisplay('appScreenshot')">Screenshot</button>
+						<img id="appScreenshot" src="images/Screenshots.png" alt="App screenshots">
 						
 					</div>
 					<hr>
@@ -120,7 +139,9 @@
 						<p>Detect brainwave and parse into control commands for rover</p>
 						<p>Implemented visual feedback system between user and rover using TCP/IP. (ie. User controls camera on the rover with wearable technology)</p>
 						<p>Integrate EEG, visual feedback and IOIO board control into android app</p>
-						<p>https://youtu.be/HUEduR_Ca9g</p>
+						<a href="https://youtu.be/HUEduR_Ca9g">Video Demonstration</a>
+						<button type="button" onclick="alterVideoDisplay()">Play</button>
+						<div id="player" style="display: none;"></div>
 
 					</div>
 				</div>
@@ -158,6 +179,97 @@
 	</div>
 
 </div>
+
+<script>
+	function alterImageDisplay(id) {
+		var img = document.getElementById(id);
+		var imgStyle = window.getComputedStyle(document.getElementById(id));
+		console.log(imgStyle.display);
+		if(imgStyle.display === 'inline')
+			img.style.display = 'none';
+		else if(imgStyle.display === 'none')
+			img.style.display = 'inline';
+	}
+
+
+	// 2. This code loads the IFrame Player API code asynchronously.
+	var tag = document.createElement('script');
+
+	tag.src = "https://www.youtube.com/iframe_api";
+	var firstScriptTag = document.getElementsByTagName('script')[0];
+	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+	// 3. This function creates an <iframe> (and YouTube player)
+	//    after the API code downloads.
+	var player;
+	function onYouTubeIframeAPIReady() {
+	/*
+	player = new YT.Player('player', {
+	  height: '390',
+	  width: '640',
+	  videoId: 'M7lc1UVf-VE',
+	  events: {
+	    'onReady': onPlayerReady,
+	    'onStateChange': onPlayerStateChange
+	  }
+	});
+	*/
+	}
+
+	// 4. The API will call this function when the video player is ready.
+	function onPlayerReady(event) {
+	event.target.playVideo();
+	}
+
+	// 5. The API calls this function when the player's state changes.
+	//    The function indicates that when playing a video (state=1),
+	//    the player should play for six seconds and then stop.
+	var done = false;
+	function onPlayerStateChange(event) {
+	if (event.data == YT.PlayerState.PLAYING && !done) {
+	  //setTimeout(stopVideo, 6000);
+	  done = true;
+	}
+	}
+	function stopVideo() {
+	player.stopVideo();
+	}
+	function playVideo() {
+	player.playVideo();
+	}
+
+
+
+	function alterVideoDisplay() {
+		//console.log(player.getIFrame());
+		var img = document.getElementById('player');
+		var imgStyle = window.getComputedStyle(document.getElementById('player'));
+		console.log(imgStyle.display);
+		if(imgStyle.display === 'inline') {
+			img.style.display = 'none';
+			stopVideo();
+		}
+		else if(imgStyle.display === 'none') {
+			img.style.display = 'inline';
+			if(player != null)
+				playVideo();
+		}
+
+
+		if(player == null) {
+			console.log("construct");
+			player = new YT.Player('player', {
+			  height: '390',
+			  width: '640',
+			  videoId: 'HUEduR_Ca9g',
+			  events: {
+			    'onReady': onPlayerReady,
+			    'onStateChange': onPlayerStateChange
+			  }
+			});
+		}
+	}
+</script>
 
 </body>
 </html>

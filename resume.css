@@ -4,12 +4,23 @@ body {
 
 h1 {
 	margin: 0px; 
+	margin-left: 3px;
 }
 
 
 p {
 	margin: 5px; 
 }
+
+a {
+	margin: 5px; 
+}
+
+button {
+	margin: 5px; 
+}
+
+
 
 
 
@@ -22,7 +33,24 @@ p {
 	border-width: 2px 0 2px 0; }
 
 #hd {
-	margin: 30px;
+	margin: 0px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	height: 100px;
+}
+
+#hdLeft {
+	float:left;
+	text-align: left;
+}
+
+#hdRight {
+	float:right;
+	text-align: right;
+}
+
+div.hdLinks {
+	margin: 5px;
 }
 
 
@@ -121,4 +149,10 @@ p.cellContent {
 div.expCell {
 	margin-top:20px;
 	margin-bottom:20px;
+}
+
+#appScreenshot {
+	width:464px;
+	height:256px;
+	display: none;
 }
