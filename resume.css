@@ -125,6 +125,11 @@ p.cellTitleP {
 	font-size: 110%;
 }
 
+p.cellContentP {
+	font-size: 100%;
+}
+
+
 p.cellContent {
 	margin: 0px; 
 	text-align:left;
